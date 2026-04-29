@@ -30,7 +30,7 @@ export default function CommunityHero() {
             </AnimatedSection>
 
             <AnimatedSection
-                className="relative mx-auto mt-7 max-w-[670px] pt-[20%] text-center"
+                className="relative mx-auto mt-15 max-w-[670px] pt-[20%] text-center"
                 delay={0.11}
             >
                 <span className="pattern-surface inline-flex rounded-full border border-white/12 px-4 py-1.5 text-[0.96rem] text-[#c7c7c7]">

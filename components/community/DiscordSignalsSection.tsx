@@ -7,9 +7,14 @@ import { ASSETS } from '@/lib/assets';
 export default function DiscordSignalsSection() {
     return (
         <AnimatedSection
-            className="mx-auto w-full max-w-[1240px] px-4 pt-50 pb-10 md:px-7"
+            className="relative mx-auto w-full max-w-[1240px] px-4 py-5 md:px-7"
             delay={0.06}
         >
+            <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-x-0 -top-20 h-20 w-screen bg-linear-to-b from-black/0 to-black"
+            ></div>
+
             <h2 className="mx-auto mt-6 max-w-[670px] text-center text-[clamp(2.2rem,2.2vw,4rem)] leading-[1.1] text-balance text-[#d4d4d4]">
                 Trading alert <span className="text-[#2de868]">signals</span>{' '}
                 directly&nbsp;through{' '}
@@ -34,7 +39,11 @@ export default function DiscordSignalsSection() {
                         instead of structured decision tools.
                     </p>
                     <div className="mt-8">
-                        <Button href="/access">
+                        <Button
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://discord.com/channels/892551520451702804/1431238626179809370"
+                        >
                             Discord Token Gated Access
                         </Button>
                     </div>

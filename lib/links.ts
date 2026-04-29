@@ -8,7 +8,7 @@ export const EXTERNAL_LINKS = {
 export const SITE_NAV_LINKS = [
     {
         href: '/community',
-        label: 'Community',
+        label: 'Learn More',
     },
     {
         href: '/access',
@@ -23,3 +23,13 @@ export const SITE_NAV_LINKS = [
         label: 'Testimonials',
     },
 ] as const;
+
+export const TRADER_FIT_LINKS = {
+    freeDiscord:
+        'https://discord.com/channels/892551520451702804/1431238626179809370',
+    sigmaX: 'https://x.com/sigmaonxrpl?s=21',
+    unlockSigma: 'https://tradingstyle.sigmalabz.xyz/connect',
+    learnHowItWorks: 'https://tradingstyle.sigmalabz.xyz/instructions',
+    tickerTactix: 'https://ticker-tactix.com/',
+    tools: '#',
+} as const;

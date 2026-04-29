@@ -2,6 +2,7 @@ import AnimatedSection from '@/components/ui/AnimatedSection';
 import Button from '@/components/ui/Button';
 import SegmentedHeroVideo from '@/components/ui/SegmentedHeroVideo';
 import { ASSETS } from '@/lib/assets';
+import { EXTERNAL_LINKS } from '@/lib/links';
 
 export default function LandingHero() {
     return (
@@ -28,15 +29,17 @@ export default function LandingHero() {
                         structure than open chat communities.
                     </p>
                     <div className="mt-8 flex flex-wrap items-center gap-4">
-                        <Button className="min-w-[212px]" href="/access">
-                            Launch Dashboard
+                        <Button className="min-w-[190px]" href="/community">
+                            Learn More
                         </Button>
                         <Button
-                            className="min-w-[190px]"
-                            href="/community"
                             variant="secondary"
+                            className="min-w-[212px]"
+                            href={EXTERNAL_LINKS.connectWallet}
+                            target="_blank"
+                            rel="noopener noreferrer"
                         >
-                            Learn More
+                            Launch Web App
                         </Button>
                     </div>
                 </AnimatedSection>

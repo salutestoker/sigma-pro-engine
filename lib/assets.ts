@@ -1,5 +1,6 @@
 export const ASSETS = {
     logo: '/images/logo-sigma-pro-engine.png',
+    logoMain: '/images/logo-sigma-pro-engine-main.png',
     patternDots: '/images/pattern-dots.png',
     moonVideo: '/videos/moon.mp4',
     laptopOpenVideo: '/videos/laptop-open.webm',

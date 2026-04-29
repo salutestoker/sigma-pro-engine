@@ -1,12 +1,44 @@
 'use client';
 
 import Image from 'next/image';
+import { useMemo, useState } from 'react';
 
+import { useTraderFitModal } from '@/components/quiz/TraderFitProvider';
+import {
+    TRADER_FIT_QUESTION_IDS,
+    TRADER_FIT_QUESTIONS,
+} from '@/components/quiz/traderFitQuizConfig';
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import Button from '@/components/ui/Button';
 import { ASSETS } from '@/lib/assets';
 
 export default function TraderTypeSection() {
+    const { openTraderFitModal } = useTraderFitModal();
+    const [selectedTraderType, setSelectedTraderType] = useState('');
+
+    const traderTypeQuestion = useMemo(
+        () =>
+            TRADER_FIT_QUESTIONS.find(
+                (question) =>
+                    question.id === TRADER_FIT_QUESTION_IDS.traderType,
+            ),
+        [],
+    );
+
+    function handleContinue() {
+        if (!selectedTraderType) {
+            openTraderFitModal();
+            return;
+        }
+
+        openTraderFitModal({
+            initialAnswers: {
+                [TRADER_FIT_QUESTION_IDS.traderType]: selectedTraderType,
+            },
+            startQuestionIndex: 1,
+        });
+    }
+
     return (
         <div className="relative">
             <AnimatedSection
@@ -36,24 +68,38 @@ export default function TraderTypeSection() {
                             <div className="relative">
                                 <select
                                     className="pattern-surface h-12 w-full appearance-none rounded-xl border border-white/12 bg-[#101010]/82 px-4 text-sm tracking-[0.06em] text-[#d0d0d0] uppercase focus-visible:ring-2 focus-visible:ring-[#9446ff] focus-visible:ring-offset-2 focus-visible:ring-offset-black focus-visible:outline-none"
-                                    defaultValue=""
                                     id="trader-type-select"
+                                    onChange={(event) =>
+                                        setSelectedTraderType(
+                                            event.target.value,
+                                        )
+                                    }
+                                    value={selectedTraderType}
                                 >
                                     <option disabled value="">
                                         SELECT YOUR TRADER TYPE
                                     </option>
-                                    <option value="scalper">Scalper</option>
-                                    <option value="swing">Swing Trader</option>
-                                    <option value="position">
-                                        Position Trader
-                                    </option>
+                                    {traderTypeQuestion?.answers.map(
+                                        (answer) => (
+                                            <option
+                                                key={answer.id}
+                                                value={answer.id}
+                                            >
+                                                {answer.label}
+                                            </option>
+                                        ),
+                                    )}
                                 </select>
                                 <span className="pointer-events-none absolute inset-y-0 right-4 flex items-center text-white/55">
                                     ▾
                                 </span>
                             </div>
 
-                            <Button className="mt-2" type="button">
+                            <Button
+                                className="mt-2"
+                                onClick={handleContinue}
+                                type="button"
+                            >
                                 Continue
                             </Button>
                         </div>

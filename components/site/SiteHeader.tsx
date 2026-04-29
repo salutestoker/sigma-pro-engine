@@ -41,14 +41,15 @@ export default function SiteHeader({ className }: SiteHeaderProps) {
                 >
                     <Image
                         alt="SIGMA Pro Engine logo"
-                        className="h-auto w-[3vw] max-w-[60px] min-w-[40px]"
+                        className="h-auto w-[4vw] max-w-[60px] min-w-[40px]"
                         height={1135}
                         priority
-                        src={ASSETS.logo}
+                        src={ASSETS.logoMain}
                         width={1057}
                     />
                 </Link>
 
+                {/*
                 <nav
                     className="pointer-events-auto fixed left-1/2 hidden -translate-x-1/2 md:block"
                     aria-label="Primary navigation"
@@ -80,12 +81,15 @@ export default function SiteHeader({ className }: SiteHeaderProps) {
                         </ul>
                     </div>
                 </nav>
+                */}
 
                 <div className="pointer-events-auto flex items-center gap-2">
                     <Button
                         href={EXTERNAL_LINKS.connectWallet}
                         size="sm"
                         variant="secondary"
+                        target="_blank"
+                        rel="noopener noreferrer"
                     >
                         Connect Wallet
                     </Button>

@@ -67,7 +67,10 @@ button,
 .pattern-surface {
     background-color: #111111 !important;
     opacity: 1;
-    background-image: radial-gradient(#222222 0.6000000000000001px, #111111 0.6000000000000001px);
+    background-image: radial-gradient(
+        #222222 0.6000000000000001px,
+        #111111 0.6000000000000001px
+    );
     background-size: 5px 5px;
 }
 
@@ -82,7 +85,7 @@ button,
 }
 
 .nav-active-link::after {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     right: 0;
@@ -98,7 +101,29 @@ button,
     text-wrap: balance;
 }
 
+@keyframes asset-carousel-scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.asset-carousel-track {
+    animation: asset-carousel-scroll 95s linear infinite;
+    will-change: transform;
+}
+
+.asset-carousel:hover .asset-carousel-track {
+    animation-play-state: paused;
+}
+
 @media (prefers-reduced-motion: reduce) {
+    .asset-carousel-track {
+        animation: none !important;
+    }
+
     *,
     *::before,
     *::after {
