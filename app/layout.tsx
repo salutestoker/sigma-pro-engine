@@ -20,10 +20,34 @@ const DEFAULT_IMAGE = '/images/sigma-pro-engine-2026.jpg';
 const DEFAULT_IMAGE_ALT =
     'SIGMA Pro Engine social preview featuring SIGMA and XRPL supercars in a foggy scene';
 
+function normalizeSiteUrl(value?: string) {
+    if (!value) {
+        return null;
+    }
+
+    const trimmed = value.trim();
+
+    if (!trimmed) {
+        return null;
+    }
+
+    const withProtocol = /^https?:\/\//i.test(trimmed)
+        ? trimmed
+        : `https://${trimmed}`;
+
+    return withProtocol.replace(/\/+$/, '');
+}
+
+const resolvedSiteUrl =
+    normalizeSiteUrl(process.env.NEXT_PUBLIC_SITE_URL) ??
+    normalizeSiteUrl(process.env.SITE_URL) ??
+    normalizeSiteUrl(process.env.VERCEL_URL) ??
+    'http://localhost:3000';
+
+const resolvedImageUrl = `${resolvedSiteUrl}${DEFAULT_IMAGE}`;
+
 export const metadata: Metadata = {
-    metadataBase: new URL(
-        process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost',
-    ),
+    metadataBase: new URL(resolvedSiteUrl),
     title: DEFAULT_TITLE,
     description: DEFAULT_DESCRIPTION,
     openGraph: {
@@ -31,10 +55,10 @@ export const metadata: Metadata = {
         siteName: 'Sigma Indicator',
         title: DEFAULT_TITLE,
         description: DEFAULT_DESCRIPTION,
-        url: '/',
+        url: resolvedSiteUrl,
         images: [
             {
-                url: DEFAULT_IMAGE,
+                url: resolvedImageUrl,
                 alt: DEFAULT_IMAGE_ALT,
             },
         ],
@@ -45,7 +69,7 @@ export const metadata: Metadata = {
         description: DEFAULT_DESCRIPTION,
         images: [
             {
-                url: DEFAULT_IMAGE,
+                url: resolvedImageUrl,
                 alt: DEFAULT_IMAGE_ALT,
             },
         ],
