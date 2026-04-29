@@ -1,0 +1,21 @@
+export const ASSETS = {
+    logo: '/images/logo-sigma-pro-engine.png',
+    patternDots: '/images/pattern-dots.png',
+    moonVideo: '/videos/moon.mp4',
+    laptopOpenVideo: '/videos/laptop-open.webm',
+    laptopForwardVideo: '/videos/laptop-forward.webm',
+    communityVideo: '/videos/vhs-sample.mp4',
+    discordMockup: '/images/zen-lounge.png',
+    traderFigure: '/images/type-of-trader.jpg',
+    tokens: [
+        '/images/asset-BTC.png',
+        '/images/asset-Chainlink.png',
+        '/images/asset-ETH.png',
+        '/images/asset-BCH.png',
+        '/images/asset-BNB.png',
+        '/images/asset-HBAR.png',
+        '/images/asset-AVAX.png',
+        '/images/asset-XRP.png',
+        '/images/asset-SOL.png',
+    ],
+} as const;
