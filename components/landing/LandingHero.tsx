@@ -46,7 +46,7 @@ export default function LandingHero() {
 
                 <div>
                     <SegmentedHeroVideo
-                        className="pointer-events-none fixed top-1/2 left-1/2 z-0 z-10 -translate-x-1/2 -translate-y-1/2 drop-shadow-[0_28px_75px_rgba(0,0,0,0.9)]"
+                        className="pointer-events-none fixed top-1/2 left-1/2 z-0 -translate-x-1/2 -translate-y-1/2 drop-shadow-[0_28px_75px_rgba(0,0,0,0.9)]"
                         src={ASSETS.laptopForwardVideo}
                     />
                 </div>

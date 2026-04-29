@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Figtree } from 'next/font/google';
 
 import TraderFitProvider from '@/components/quiz/TraderFitProvider';
+import PageVideoLoadGate from '@/components/site/PageVideoLoadGate';
 
 import './globals.css';
 
@@ -59,7 +60,9 @@ export default function RootLayout({
     return (
         <html lang="en" className={`${figtree.variable} h-full antialiased`}>
             <body className="min-h-full bg-black font-sans text-[#cccccc]">
-                <TraderFitProvider>{children}</TraderFitProvider>
+                <TraderFitProvider>
+                    <PageVideoLoadGate>{children}</PageVideoLoadGate>
+                </TraderFitProvider>
             </body>
         </html>
     );
