@@ -32,7 +32,7 @@ export default function DiscordSignalsSection() {
                     />
                 </div>
 
-                <div className="max-w-[520px]">
+                <div className="max-w-[520px] max-sm:text-center">
                     <p className="text-[clamp(1.08rem,1.6vw,1.36rem)] leading-[1.72] text-balance text-[#b9b9b9]">
                         Crypto traders are overwhelmed by noise. Most rely on
                         fragmented posts, hype cycles, and conflicting signals
@@ -44,7 +44,7 @@ export default function DiscordSignalsSection() {
                             rel="noopener noreferrer"
                             href="https://discord.com/channels/892551520451702804/1431238626179809370"
                         >
-                            Discord Token Gated Access
+                            Discord Access
                         </Button>
                     </div>
                 </div>

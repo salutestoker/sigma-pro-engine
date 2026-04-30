@@ -46,7 +46,7 @@ export default function TraderTypeSection() {
                 delay={0.06}
                 id="trader-type"
             >
-                <div className="relative z-10 flex flex-col justify-center py-60">
+                <div className="relative z-10 flex flex-col justify-center py-30 sm:py-60">
                     <div className="w-full pt-24">
                         <h2 className="text-[clamp(1.95rem,2.8vw,3.45rem)] leading-[1.14] text-balance text-[#d6d6d6]">
                             What kind of{' '}
@@ -106,7 +106,7 @@ export default function TraderTypeSection() {
                     </div>
                 </div>
             </AnimatedSection>
-            <div className="absolute top-20 right-0 z-0 h-full w-1/2">
+            <div className="absolute top-20 right-0 z-0 h-full w-1/2 max-sm:w-full">
                 <Image
                     alt="Trader profile silhouette"
                     className="h-full w-full object-cover"
