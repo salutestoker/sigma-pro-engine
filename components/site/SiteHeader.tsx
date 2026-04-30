@@ -98,7 +98,7 @@ export default function SiteHeader({ className }: SiteHeaderProps) {
                         aria-controls="mobile-nav"
                         aria-expanded={menuOpen}
                         aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-                        className="pattern-surface flex h-10 w-10 items-center justify-center rounded-[14px] border border-white/15 bg-[#111111]/82 text-white transition hover:border-white/30 focus-visible:ring-2 focus-visible:ring-[#9446ff] focus-visible:ring-offset-2 focus-visible:ring-offset-black focus-visible:outline-none md:hidden"
+                        className="pattern-surface flex hidden h-10 w-10 items-center justify-center rounded-[14px] border border-white/15 bg-[#111111]/82 text-white transition hover:border-white/30 focus-visible:ring-2 focus-visible:ring-[#9446ff] focus-visible:ring-offset-2 focus-visible:ring-offset-black focus-visible:outline-none"
                         onClick={() => setMenuOpen((prev) => !prev)}
                         type="button"
                     >

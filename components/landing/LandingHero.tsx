@@ -29,12 +29,15 @@ export default function LandingHero() {
                         structure than open chat communities.
                     </p>
                     <div className="max-[800px]: mt-8 flex flex-wrap items-center gap-4 max-[800px]:justify-center">
-                        <Button className="min-w-[190px]" href="/community">
+                        <Button
+                            className="min-w-[190px] max-[500px]:h-10 max-[500px]:min-w-0 max-[500px]:px-4 max-[500px]:text-[0.92rem]"
+                            href="/community"
+                        >
                             Learn More
                         </Button>
                         <Button
                             variant="secondary"
-                            className="min-w-[212px]"
+                            className="min-w-[212px] max-[500px]:h-10 max-[500px]:min-w-0 max-[500px]:px-4 max-[500px]:text-[0.92rem]"
                             href={EXTERNAL_LINKS.connectWallet}
                             target="_blank"
                             rel="noopener noreferrer"
