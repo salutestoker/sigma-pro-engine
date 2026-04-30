@@ -6,10 +6,10 @@ import { EXTERNAL_LINKS } from '@/lib/links';
 
 export default function LandingHero() {
     return (
-        <section className="relative flex max-h-screen flex-col justify-center md:h-screen">
-            <div className="relative z-100 mx-auto w-full max-w-[1240px] items-center gap-10 px-4 md:px-7 lg:grid-cols-[1.02fr_0.98fr] lg:gap-6">
+        <section className="relative flex flex-col justify-center min-[801px]:h-screen min-[801px]:max-h-screen">
+            <div className="relative z-100 mx-auto w-full max-w-[1240px] items-center gap-10 px-4 max-[800px]:flex max-[800px]:flex-col max-[800px]:px-6 max-[800px]:text-center md:px-7 lg:grid-cols-[1.02fr_0.98fr] lg:gap-6">
                 <AnimatedSection
-                    className="relative z-10 order-2 w-[700px] max-w-[60vw] lg:order-1"
+                    className="relative z-10 order-2 w-[700px] max-w-[100vw] max-[800px]:mt-[100vw] max-[800px]:mb-10 max-[800px]:w-full max-[800px]:max-w-full lg:order-1"
                     delay={0.05}
                 >
                     <span className="pattern-surface inline-flex rounded-full border border-white/12 px-4 py-1.5 text-[1.01rem] text-[#c9c9c9]">
@@ -28,7 +28,7 @@ export default function LandingHero() {
                         a more committed user base and a stronger incentive
                         structure than open chat communities.
                     </p>
-                    <div className="mt-8 flex flex-wrap items-center gap-4">
+                    <div className="max-[800px]: mt-8 flex flex-wrap items-center gap-4 max-[800px]:justify-center">
                         <Button className="min-w-[190px]" href="/community">
                             Learn More
                         </Button>
@@ -44,9 +44,9 @@ export default function LandingHero() {
                     </div>
                 </AnimatedSection>
 
-                <div>
+                <div className="pointer-events-none absolute z-[-1] max-[800px]:flex max-[800px]:justify-center">
                     <SegmentedHeroVideo
-                        className="pointer-events-none fixed top-1/2 left-1/2 z-0 -translate-x-1/2 -translate-y-1/2 drop-shadow-[0_28px_75px_rgba(0,0,0,0.9)]"
+                        className="pointer-events-none fixed top-1/2 left-1/2 z-0 -translate-x-1/2 -translate-y-1/2 drop-shadow-[0_28px_75px_rgba(0,0,0,0.9)] max-[800px]:static max-[800px]:top-auto max-[800px]:left-auto max-[800px]:translate-x-0 max-[800px]:translate-y-0"
                         src={ASSETS.laptopForwardVideo}
                     />
                 </div>

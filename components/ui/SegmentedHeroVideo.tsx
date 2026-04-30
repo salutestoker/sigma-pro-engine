@@ -43,7 +43,7 @@ export default function SegmentedHeroVideo({
             aria-hidden="true"
             controls={false}
             className={cn(
-                'pointer-events-none h-auto w-full max-w-[1320px] -translate-x-1/5 object-contain',
+                'pointer-events-none h-auto w-full max-w-[1320px] -translate-x-1/5 object-contain max-[800px]:w-[200vw]',
                 className,
             )}
             onError={handleError}

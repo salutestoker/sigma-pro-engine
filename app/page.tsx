@@ -5,7 +5,7 @@ import { ASSETS } from '@/lib/assets';
 
 export default function LandingPage() {
     return (
-        <div className="relative h-screen overflow-hidden bg-black/60">
+        <div className="relative overflow-x-hidden bg-black/60 min-[801px]:h-screen">
             <div className="pointer-events-none fixed inset-0 -z-10">
                 <video
                     autoPlay
@@ -23,12 +23,8 @@ export default function LandingPage() {
 
             <SiteHeader />
 
-            <main className="relative z-10 flex h-screen flex-col overflow-hidden">
+            <main className="relative z-10 flex flex-col overflow-x-hidden min-[801px]:h-screen">
                 <LandingHero />
-
-                <div className="mx-auto w-full max-w-[1500px] px-0">
-                    <div className="h-px w-full bg-linear-to-r from-transparent via-white/14 to-transparent"></div>
-                </div>
 
                 <SiteFooter className="mt-auto" />
             </main>

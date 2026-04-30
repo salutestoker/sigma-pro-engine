@@ -17,13 +17,13 @@ export default function SiteFooter({ className }: SiteFooterProps) {
                 <PatternPanel className="relative z-100 rounded-2xl px-5 py-4 sm:px-7 sm:py-5">
                     <Image
                         alt="SIGMA Pro Engine logo"
-                        className="absolute -bottom-1 left-1/2 h-auto w-[130px] -translate-x-1/2"
+                        className="absolute -bottom-1 left-1/2 hidden h-auto w-[130px] -translate-x-1/2 lg:block"
                         height={1135}
                         priority
                         src={ASSETS.logo}
                         width={1057}
                     />
-                    <div className="flex flex-col items-start justify-between gap-4 text-sm text-[#a7a7a7] sm:flex-row sm:items-center">
+                    <div className="flex flex-col-reverse items-center justify-between gap-4 text-sm text-[#a7a7a7] sm:flex-col sm:flex-row sm:items-center sm:items-start">
                         <p className="text-[0.8rem]">
                             Copyright © 2026 SIGMA LABZ. All Rights Reserved.
                         </p>
