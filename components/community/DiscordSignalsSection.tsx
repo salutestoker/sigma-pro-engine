@@ -16,8 +16,8 @@ export default function DiscordSignalsSection() {
             ></div>
 
             <h2 className="mx-auto mt-6 max-w-[670px] text-center text-[clamp(2.2rem,2.2vw,4rem)] leading-[1.1] text-balance text-[#d4d4d4]">
-                Trading alert <span className="text-[#2de868]">signals</span>{' '}
-                directly&nbsp;through{' '}
+                Trading alert <span className="text-[#2de868]">signals</span>.{' '}
+                Directly&nbsp;through{' '}
                 <span className="text-[#8440e1]">discord.</span>
             </h2>
 

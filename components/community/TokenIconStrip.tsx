@@ -64,12 +64,13 @@ export default function TokenIconStrip() {
             ></div>
 
             <div className="relative z-10 mx-auto flex w-full max-w-[1700px] flex-col justify-center px-4 py-16 text-center sm:px-7 md:px-10">
-                <h2 className="text-[0.86rem] tracking-[0.16em] text-[#b3b3b3] uppercase">
+                <h2 className="text-[1.5rem] tracking-[0.16em] text-[#b3b3b3] uppercase">
                     Currently Tracked Assets
                 </h2>
                 <p className="mx-auto mt-4 max-w-[760px] text-[clamp(1.1rem,2.1vw,1.6rem)] leading-[1.5] text-[#d2d2d2]">
-                    Markets move fast. Stay familiar with the symbols that
-                    matter.
+                    Markets move <span className="text-[#2de868]">fast</span>.
+                    Stay familiar with the symbols that&nbsp;{' '}
+                    <span className="text-[#8440e1]">matter</span>.
                 </p>
 
                 <div className="asset-carousel relative mt-12">
