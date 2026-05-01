@@ -2,7 +2,6 @@ import AnimatedSection from '@/components/ui/AnimatedSection';
 import Button from '@/components/ui/Button';
 import SegmentedHeroVideo from '@/components/ui/SegmentedHeroVideo';
 import { ASSETS } from '@/lib/assets';
-import { EXTERNAL_LINKS } from '@/lib/links';
 
 export default function LandingHero() {
     return (
@@ -38,9 +37,7 @@ export default function LandingHero() {
                         <Button
                             variant="secondary"
                             className="min-w-[212px] max-[500px]:h-10 max-[500px]:min-w-0 max-[500px]:px-4 max-[500px]:text-[0.92rem]"
-                            href={EXTERNAL_LINKS.connectWallet}
-                            target="_blank"
-                            rel="noopener noreferrer"
+                            href="/community"
                         >
                             Community
                         </Button>
