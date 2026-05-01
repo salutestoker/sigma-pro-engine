@@ -7,20 +7,16 @@ export const EXTERNAL_LINKS = {
 
 export const SITE_NAV_LINKS = [
     {
+        href: '/',
+        label: 'Home',
+    },
+    {
+        href: '/get-started',
+        label: 'Get Started',
+    },
+    {
         href: '/community',
-        label: 'Learn More',
-    },
-    {
-        href: '/access',
-        label: 'Access',
-    },
-    {
-        href: '/tools',
-        label: 'Tools',
-    },
-    {
-        href: '/testimonials',
-        label: 'Testimonials',
+        label: 'Community',
     },
 ] as const;
 

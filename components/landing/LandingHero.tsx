@@ -31,9 +31,9 @@ export default function LandingHero() {
                     <div className="max-[800px]: mt-8 flex flex-wrap items-center gap-4 max-[800px]:justify-center">
                         <Button
                             className="min-w-[190px] max-[500px]:h-10 max-[500px]:min-w-0 max-[500px]:px-4 max-[500px]:text-[0.92rem]"
-                            href="/community"
+                            href="/get-started"
                         >
-                            Learn More
+                            Get Started
                         </Button>
                         <Button
                             variant="secondary"
@@ -42,7 +42,7 @@ export default function LandingHero() {
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            Launch Web App
+                            Community
                         </Button>
                     </div>
                 </AnimatedSection>

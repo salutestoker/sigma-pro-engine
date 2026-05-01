@@ -119,6 +119,28 @@ button,
     animation-play-state: paused;
 }
 
+@keyframes get-started-logo-float {
+    0%,
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+    50% {
+        transform: translate3d(0, -6px, 0);
+    }
+}
+
+.get-started-logo-float {
+    animation-name: get-started-logo-float;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    will-change: transform;
+}
+
+.get-started-logo-float:hover,
+.get-started-logo-float:focus-visible {
+    animation-play-state: paused;
+}
+
 @media (prefers-reduced-motion: reduce) {
     .asset-carousel-track {
         animation: none !important;

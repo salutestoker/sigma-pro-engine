@@ -49,27 +49,39 @@ export default function SiteHeader({ className }: SiteHeaderProps) {
                     />
                 </Link>
 
-                {/*
                 <nav
                     className="pointer-events-auto fixed left-1/2 hidden -translate-x-1/2 md:block"
                     aria-label="Primary navigation"
                 >
                     <div className="pattern-surface rounded-2xl bg-[#111111]/82 shadow-[0_18px_60px_-30px_rgba(0,0,0,0.95)] backdrop-blur-sm">
                         <ul className="flex items-center gap-1.5">
-                            {SITE_NAV_LINKS.map((item) => {
+                            {SITE_NAV_LINKS.map((item, index) => {
                                 const active = isNavItemActive(
                                     activePath,
                                     item.href,
                                 );
+                                const isFirst = index === 0;
+                                const isLast =
+                                    index === SITE_NAV_LINKS.length - 1;
 
                                 return (
                                     <li key={item.href}>
                                         <Link
                                             className={cn(
-                                                'inline-flex h-10 items-center justify-center rounded-l-xl px-5 text-[0.95rem] text-[#bcbcbc] transition-all duration-300 hover:text-white focus-visible:ring-2 focus-visible:ring-[#9446ff] focus-visible:ring-offset-2 focus-visible:ring-offset-black focus-visible:outline-none',
+                                                'inline-flex h-10 items-center justify-center px-5 text-[0.95rem] text-[#bcbcbc] transition-all duration-300 hover:text-white focus-visible:ring-2 focus-visible:ring-[#9446ff] focus-visible:ring-offset-2 focus-visible:ring-offset-black focus-visible:outline-none',
                                                 active &&
-                                                    'rounded-r-0 bg-linear-to-r from-[#9446ff] via-[#8440e1] to-[#6830ba] text-white shadow-[0_10px_30px_-16px_rgba(132,64,225,0.92)]',
-                                                !active && 'rounded-r-xl',
+                                                    'bg-linear-to-r from-[#9446ff] via-[#8440e1] to-[#6830ba] text-white shadow-[0_10px_30px_-16px_rgba(132,64,225,0.92)]',
+                                                active &&
+                                                    isFirst &&
+                                                    'rounded-l-xl rounded-r-[0.65rem]',
+                                                active &&
+                                                    isLast &&
+                                                    'rounded-l-[0.65rem] rounded-r-xl',
+                                                active &&
+                                                    !isFirst &&
+                                                    !isLast &&
+                                                    'rounded-xl',
+                                                !active && 'rounded-xl',
                                             )}
                                             href={item.href}
                                         >
@@ -81,7 +93,6 @@ export default function SiteHeader({ className }: SiteHeaderProps) {
                         </ul>
                     </div>
                 </nav>
-                */}
 
                 <div className="pointer-events-auto flex items-center gap-2">
                     <Button
