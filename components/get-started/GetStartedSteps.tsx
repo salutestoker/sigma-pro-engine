@@ -30,7 +30,7 @@ function renderAlternatingTitle(title: string, stepIndex: number) {
 
 export default function GetStartedSteps() {
     return (
-        <section className="relative mt-20 mb-50 overflow-hidden pt-28 pb-16 sm:pt-32 sm:pb-22">
+        <section className="relative mt-10 mb-2 overflow-hidden pt-28 pb-16 sm:pt-32 sm:pb-22 md:mt-20 md:mb-50">
             <div className="pointer-events-none absolute inset-0 bg-radial-[circle_at_28%_18%] from-[#8440e1]/12 via-transparent to-transparent"></div>
             <div className="pointer-events-none absolute inset-0 bg-radial-[circle_at_78%_52%] from-[#2de868]/9 via-transparent to-transparent"></div>
             <div
