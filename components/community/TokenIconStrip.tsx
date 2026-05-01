@@ -73,7 +73,35 @@ export default function TokenIconStrip() {
                     <span className="text-[#8440e1]">matter</span>.
                 </p>
 
-                <div className="asset-carousel relative mt-12">
+                <div className="mt-12 md:hidden">
+                    <div className="-mx-4 overflow-x-auto px-4 sm:-mx-7 sm:px-7">
+                        <div className="flex w-max items-start gap-6 pb-2">
+                            {assets.map((asset) => (
+                                <div
+                                    className="relative shrink-0 text-center"
+                                    key={asset.src}
+                                >
+                                    <div className="absolute inset-1 rounded-full bg-radial-[circle_at_center] from-[#8440e1]/50 via-[#51109a]/25 to-transparent blur-[11px]"></div>
+                                    <div className="relative rounded-full border border-[#8440e1]/28 bg-black/55 p-[7px] shadow-[0_18px_42px_-24px_rgba(132,64,225,0.82)]">
+                                        <Image
+                                            alt={`${asset.label} logo`}
+                                            className="h-[72px] w-[72px] rounded-full object-contain p-2 saturate-[1.08]"
+                                            height={96}
+                                            src={asset.src}
+                                            width={96}
+                                        />
+                                    </div>
+
+                                    <span className="mt-2.5 block text-[0.68rem] tracking-[0.08em] whitespace-nowrap text-white uppercase">
+                                        {asset.label}
+                                    </span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+
+                <div className="asset-carousel relative mt-12 hidden md:block">
                     <div className="asset-carousel-track flex w-max items-center gap-7 px-4 sm:gap-11 sm:px-6 md:gap-14">
                         {carouselItems.map((asset, index) => (
                             <div
