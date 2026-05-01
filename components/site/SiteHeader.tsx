@@ -73,15 +73,15 @@ export default function SiteHeader({ className }: SiteHeaderProps) {
                                                     'bg-linear-to-r from-[#9446ff] via-[#8440e1] to-[#6830ba] text-white shadow-[0_10px_30px_-16px_rgba(132,64,225,0.92)]',
                                                 active &&
                                                     isFirst &&
-                                                    'rounded-l-xl rounded-r-[0.65rem]',
+                                                    'rounded-r-0 rounded-l-xl',
                                                 active &&
                                                     isLast &&
-                                                    'rounded-l-[0.65rem] rounded-r-xl',
-                                                active &&
-                                                    !isFirst &&
-                                                    !isLast &&
-                                                    'rounded-xl',
-                                                !active && 'rounded-xl',
+                                                    'rounded-l-0 rounded-r-xl',
+                                                // active &&
+                                                //     !isFirst &&
+                                                //     !isLast &&
+                                                //     'rounded-xl',
+                                                // !active && 'rounded-xl',
                                             )}
                                             href={item.href}
                                         >

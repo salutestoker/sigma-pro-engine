@@ -4,6 +4,7 @@ import { CSSProperties } from 'react';
 
 import GetStartedSlideshow from '@/components/get-started/GetStartedSlideshow';
 import { GET_STARTED_STEPS } from '@/components/get-started/getStartedStepsConfig';
+import AnimatedSection from '@/components/ui/AnimatedSection';
 
 const TITLE_ACCENT_CLASSES = ['text-[#8440e1]', 'text-[#2de868]'] as const;
 const LOGO_FLOAT_DURATIONS = [4.1, 4.8, 5.4, 6.1, 6.8] as const;
@@ -44,8 +45,10 @@ export default function GetStartedSteps() {
             <div className="relative z-10 mx-auto w-full max-w-[1240px] px-4 md:px-7">
                 <ol className="space-y-18 sm:space-y-24">
                     {GET_STARTED_STEPS.map((step, stepIndex) => (
-                        <section
+                        <AnimatedSection
+                            as="div"
                             className="grid gap-8 lg:grid-cols-[1.02fr_1fr] lg:items-center"
+                            delay={0.05 + stepIndex * 0.12}
                             key={step.id}
                         >
                             <div className="flex items-start gap-4 sm:gap-6 md:gap-8">
@@ -152,7 +155,7 @@ export default function GetStartedSteps() {
                             </div>
 
                             <GetStartedSlideshow slides={step.slides} />
-                        </section>
+                        </AnimatedSection>
                     ))}
                 </ol>
             </div>
