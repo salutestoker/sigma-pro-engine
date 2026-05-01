@@ -1,7 +1,9 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-import Image from 'next/image';
+import TokenIconCarousel, {
+    TokenIconCarouselItem,
+} from '@/components/community/TokenIconCarousel';
 
 const ASSET_IMAGES_DIRECTORY = path.join(
     process.cwd(),
@@ -17,7 +19,7 @@ function toAssetLabel(filename: string) {
         .trim();
 }
 
-function getAssetItems() {
+function getAssetItems(): TokenIconCarouselItem[] {
     const allowedExtensions = new Set([
         '.png',
         '.jpg',
@@ -45,7 +47,6 @@ function getAssetItems() {
 
 export default function TokenIconStrip() {
     const assets = getAssetItems();
-    const carouselItems = [...assets, ...assets];
 
     if (assets.length === 0) {
         return null;
@@ -69,63 +70,11 @@ export default function TokenIconStrip() {
                 </h2>
                 <p className="mx-auto mt-4 max-w-[760px] text-[clamp(1.1rem,2.1vw,1.6rem)] leading-[1.5] text-[#d2d2d2]">
                     Markets move <span className="text-[#2de868]">fast</span>.
-                    Stay familiar with the symbols that&nbsp;{' '}
+                    Stay familiar with the symbols that&nbsp;
                     <span className="text-[#8440e1]">matter</span>.
                 </p>
 
-                <div className="mt-12 md:hidden">
-                    <div className="-mx-4 overflow-x-auto px-4 sm:-mx-7 sm:px-7">
-                        <div className="flex w-max items-start gap-6 pb-2">
-                            {assets.map((asset) => (
-                                <div
-                                    className="relative shrink-0 text-center"
-                                    key={asset.src}
-                                >
-                                    <div className="absolute inset-1 rounded-full bg-radial-[circle_at_center] from-[#8440e1]/50 via-[#51109a]/25 to-transparent blur-[11px]"></div>
-                                    <div className="relative rounded-full border border-[#8440e1]/28 bg-black/55 p-[7px] shadow-[0_18px_42px_-24px_rgba(132,64,225,0.82)]">
-                                        <Image
-                                            alt={`${asset.label} logo`}
-                                            className="h-[72px] w-[72px] rounded-full object-contain p-2 saturate-[1.08]"
-                                            height={96}
-                                            src={asset.src}
-                                            width={96}
-                                        />
-                                    </div>
-
-                                    <span className="mt-2.5 block text-[0.68rem] tracking-[0.08em] whitespace-nowrap text-white uppercase">
-                                        {asset.label}
-                                    </span>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-
-                <div className="asset-carousel relative mt-12 hidden md:block">
-                    <div className="asset-carousel-track flex w-max items-center gap-7 px-4 sm:gap-11 sm:px-6 md:gap-14">
-                        {carouselItems.map((asset, index) => (
-                            <div
-                                className="group relative shrink-0"
-                                key={`${asset.src}-${index}`}
-                            >
-                                <div className="absolute inset-1 rounded-full bg-radial-[circle_at_center] from-[#8440e1]/50 via-[#51109a]/25 to-transparent blur-[11px]"></div>
-                                <div className="relative rounded-full border border-[#8440e1]/28 bg-black/55 p-[7px] shadow-[0_18px_42px_-24px_rgba(132,64,225,0.82)]">
-                                    <Image
-                                        alt={`${asset.label} logo`}
-                                        className="h-[72px] w-[72px] rounded-full object-contain p-2 saturate-[1.08] sm:h-[88px] sm:w-[88px] md:h-[96px] md:w-[96px]"
-                                        height={128}
-                                        src={asset.src}
-                                        width={128}
-                                    />
-                                </div>
-
-                                <span className="pointer-events-none absolute top-full left-1/2 mt-3 -translate-x-1/2 rounded-md border border-white/15 bg-black/94 px-2.5 py-1 text-[0.68rem] tracking-[0.08em] whitespace-nowrap text-white uppercase opacity-0 transition duration-250 group-hover:opacity-100">
-                                    {asset.label}
-                                </span>
-                            </div>
-                        ))}
-                    </div>
-                </div>
+                <TokenIconCarousel assets={assets} />
             </div>
         </section>
     );
