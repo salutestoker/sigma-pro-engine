@@ -1,6 +1,6 @@
 'use client';
 
-import SegmentedHeroVideo from '@/components/ui/SegmentedHeroVideo';
+import HeroVideo from '@/components/ui/HeroVideo';
 
 type ControlledPingPongVideoProps = {
     ariaHidden?: boolean;
@@ -15,6 +15,7 @@ type ControlledPingPongVideoProps = {
 // Retained temporarily to avoid breakage while moving away from GSAP/currentTime control.
 export default function ControlledPingPongVideo({
     className,
+    src,
 }: ControlledPingPongVideoProps) {
-    return <SegmentedHeroVideo className={className} />;
+    return <HeroVideo className={className} src={src} />;
 }

@@ -1,6 +1,6 @@
 import AnimatedSection from '@/components/ui/AnimatedSection';
 import Button from '@/components/ui/Button';
-import SegmentedHeroVideo from '@/components/ui/SegmentedHeroVideo';
+import HeroVideo from '@/components/ui/HeroVideo';
 import { ASSETS } from '@/lib/assets';
 
 export default function LandingHero() {
@@ -45,8 +45,9 @@ export default function LandingHero() {
                 </AnimatedSection>
 
                 <div className="pointer-events-none absolute z-[-1] max-[800px]:flex max-[800px]:justify-center">
-                    <SegmentedHeroVideo
+                    <HeroVideo
                         className="pointer-events-none fixed top-1/2 left-1/2 z-0 -translate-x-1/2 -translate-y-1/2 drop-shadow-[0_28px_75px_rgba(0,0,0,0.9)] max-[800px]:static max-[800px]:top-auto max-[800px]:left-auto max-[800px]:translate-x-0 max-[800px]:translate-y-0"
+                        movSrc={ASSETS.laptopForwardMovVideo}
                         src={ASSETS.laptopForwardVideo}
                     />
                 </div>

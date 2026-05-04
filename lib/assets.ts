@@ -5,6 +5,7 @@ export const ASSETS = {
     moonVideo: '/videos/moon.mp4',
     laptopOpenVideo: '/videos/laptop-open.webm',
     laptopForwardVideo: '/videos/laptop-forward.webm',
+    laptopForwardMovVideo: '/videos/laptop-forward.mov',
     communityVideo: '/videos/vhs-sample.mp4',
     discordMockup: '/images/zen-lounge.png',
     traderFigure: '/images/type-of-trader.jpg',
