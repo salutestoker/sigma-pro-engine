@@ -31,7 +31,7 @@ function renderAlternatingTitle(title: string, stepIndex: number) {
 
 export default function GetStartedSteps() {
     return (
-        <section className="relative mt-10 mb-2 overflow-hidden pt-28 pb-16 sm:pt-32 sm:pb-22 md:mt-20 md:mb-50">
+        <section className="relative mb-2 overflow-hidden pt-28 pb-16 sm:pt-32 sm:pb-22 md:mb-50 md:pt-50">
             <div className="pointer-events-none absolute inset-0 bg-radial-[circle_at_28%_18%] from-[#8440e1]/12 via-transparent to-transparent"></div>
             <div className="pointer-events-none absolute inset-0 bg-radial-[circle_at_78%_52%] from-[#2de868]/9 via-transparent to-transparent"></div>
             <div
@@ -51,16 +51,19 @@ export default function GetStartedSteps() {
                             delay={0.05 + stepIndex * 0.12}
                             key={step.id}
                         >
-                            <div className="flex items-start gap-4 sm:gap-6 md:gap-8">
+                            <div className="flex items-start gap-8 sm:gap-6 md:gap-8">
                                 <span
                                     aria-hidden="true"
-                                    className="shrink-0 text-[clamp(4.2rem,10vw,11.2rem)] leading-[0.86] text-[#d5d5d5]"
+                                    className="shrink-0 leading-[0.86] text-[#d5d5d5] max-sm:text-[43vw] max-sm:tracking-[-4vw] sm:text-[clamp(4.2rem,10vw,11.2rem)]"
                                     style={{
                                         fontFamily:
                                             'Times New Roman, Times, serif',
                                     }}
                                 >
-                                    {stepIndex + 1}.
+                                    {stepIndex + 1}
+                                    <span className="max-sm:text-[20vw]">
+                                        .
+                                    </span>
                                 </span>
 
                                 <div className="max-w-[560px] pt-4 sm:pt-6">
